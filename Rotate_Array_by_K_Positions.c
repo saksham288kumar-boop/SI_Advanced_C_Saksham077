@@ -3,29 +3,27 @@
 #include <stdio.h>
 int main()
 {
-    int arr[5]={1, 2, 3, 4, 5};
-    int k, i, j, last;
-    printf("Enter value of K: ");
-    scanf("%d", &k);
-    k = k % 5;
+    int arr[5] = {1,2,3,4,5};
+    int n = 5, i, j;
+    int k = 1;
+    int temp;
     for(i = 0; i < k; i++)
     {
-        last = arr[5 - 1];
-        for(j = 5 - 1; j > 0; j--)
+        temp = arr[n-1];
+        for(j = n-1; j > 0; j--)
         {
-            arr[j] = arr[j - 1];
+            arr[j] = arr[j-1];
         }
-        arr[0] = last;
+        arr[0] = temp;
     }
     printf("Array after rotation:\n");
-    for(i = 0; i < 5; i++)
+    for(i = 0; i < n; i++)
     {
         printf("%d ", arr[i]);
     }
     return 0;
 }
 
-OUTPUT
-Enter value of K: 2
+/* OUTPUT
 Array after rotation:
-4 5 1 2 3
+5 1 2 3 4    */
